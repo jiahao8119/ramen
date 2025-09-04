@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, Clock, Star, ChefHat, Heart, Users } from 'lucide-react';
+import { Menu, X, MapPin, Phone, Clock, Star, UtensilsCrossed, Heart, Users } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,69 +11,70 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // 🔥 兰州拉面特色菜品
   const menuItems = [
     {
-      name: "Tonkotsu Ramen",
-      description: "Rich pork bone broth with chashu pork, soft-boiled egg, and green onions",
-      price: "$16.99",
+      name: "兰州牛肉面",
+      description: "清汤牛肉，手工拉面，配以白萝卜片、红辣椒油、绿香菜点缀，经典五色齐全。",
+      price: "RM18.90",
       image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "Miso Ramen",
-      description: "Fermented soybean paste broth with corn, bamboo shoots, and nori",
-      price: "$15.99",
-      image: "https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?auto=compress&cs=tinysrgb&w=800"
+      name: "刀削面",
+      description: "入口劲道的刀削面，浓郁牛肉汤底，佐以时令蔬菜。",
+      price: "RM16.90",
+      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "Spicy Tantanmen",
-      description: "Sesame and chili oil broth with ground pork and bok choy",
-      price: "$17.99",
-      image: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800"
+      name: "干拌牛肉面",
+      description: "鲜香牛肉与秘制酱料拌面，香辣可口，适合喜欢重口味的食客。",
+      price: "RM17.90",
+      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      name: "Vegetarian Ramen",
-      description: "Plant-based miso broth with tofu, mushrooms, and seasonal vegetables",
-      price: "$14.99",
-      image: "https://images.pexels.com/photos/1907244/pexels-photo-1907244.jpeg?auto=compress&cs=tinysrgb&w=800"
+      name: "素面",
+      description: "清汤配豆腐、木耳、香菇等蔬菜，清淡健康。",
+      price: "RM15.90",
+      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      text: "The most authentic ramen outside of Japan! The tonkotsu broth is absolutely incredible.",
+      name: "Li Wei",
+      text: "汤清味浓，辣椒油香气十足，真正的兰州拉面！",
       rating: 5
     },
     {
-      name: "Mike Rodriguez",
-      text: "Been coming here for 2 years. Consistent quality and amazing service every time.",
+      name: "Ahmad Musa",
+      text: "牛肉片软嫩入味，面条手工劲道，非常值得推荐。",
       rating: 5
     },
     {
-      name: "Emma Thompson",
-      text: "Perfect spot for ramen lovers. The spicy tantanmen is my absolute favorite!",
+      name: "Siti Nur",
+      text: "第一次尝试兰州拉面，简直惊艳！已经成为我最爱的面食。",
       rating: 5
     }
   ];
 
   return (
     <div className="min-h-screen bg-stone-50">
-      {/* Navigation */}
+      {/* 🔹 Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrollY > 50 ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <ChefHat className="h-8 w-8 text-red-600" />
+              <UtensilsCrossed className="h-8 w-8 text-red-600" />
               <span className={`font-bold text-xl transition-colors ${
                 scrollY > 50 ? 'text-gray-900' : 'text-white'
               }`}>
-                Ramen House
+                兰州拉面馆
               </span>
             </div>
-            
-            {/* Desktop Navigation */}
+
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {['Home', 'Menu', 'About', 'Contact'].map((item) => (
                 <a
@@ -87,7 +88,7 @@ function App() {
                 </a>
               ))}
               <button className="bg-red-600 text-white px-6 py-2 rounded-full font-medium hover:bg-red-700 transition-colors">
-                Order Now
+                点餐外卖
               </button>
             </div>
 
@@ -116,14 +117,14 @@ function App() {
                 </a>
               ))}
               <button className="w-full bg-red-600 text-white py-3 rounded-full font-medium hover:bg-red-700 transition-colors">
-                Order Now
+                点餐外卖
               </button>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* 🔹 Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -136,32 +137,32 @@ function App() {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Authentic
-            <span className="text-red-500 block">Japanese Ramen</span>
+            正宗
+            <span className="text-red-500 block">兰州拉面</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in-delay">
-            Experience the true taste of Japan with our carefully crafted broths and fresh ingredients
+            手工拉面 · 清汤牛肉 · 百年传承的兰州味道
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
             <button className="bg-red-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
-              Order Online
+              点餐外卖
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-300">
-              View Menu
+              查看菜单
             </button>
           </div>
         </div>
       </section>
 
-      {/* Featured Menu Section */}
+      {/* 🔹 Menu Section */}
       <section id="menu" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Signature Bowls
+              特色面食
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Each bowl is a masterpiece, carefully prepared with authentic techniques and the finest ingredients
+              每一碗面，都是匠心之作，遵循正宗兰州拉面的传统。
             </p>
           </div>
 
@@ -170,9 +171,7 @@ function App() {
               <div
                 key={item.name}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-                style={{
-                  animationDelay: `${index * 150}ms`
-                }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -188,7 +187,7 @@ function App() {
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-red-600">{item.price}</span>
                     <button className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition-colors">
-                      Add to Cart
+                      加入购物车
                     </button>
                   </div>
                 </div>
@@ -198,62 +197,62 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* 🔹 About Section */}
       <section id="about" className="py-20 bg-stone-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our Story
+                我们的故事
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Founded in 2018 by Chef Hiroshi Tanaka, Ramen House brings the authentic flavors of Tokyo to your neighborhood. With over 20 years of experience in traditional ramen preparation, Chef Tanaka sources ingredients directly from Japan to ensure every bowl captures the true essence of this beloved dish.
+                兰州拉面起源于清末，百年来以“一清、二白、三红、四绿、五黄”的特色享誉全国。
               </p>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Our broths simmer for 18 hours, our noodles are made fresh daily, and every garnish is carefully selected to create the perfect harmony of flavors and textures.
+                张师傅拥有30余年制面经验，每天现拉现煮，确保每碗面条劲道、汤鲜味美。
               </p>
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div className="bg-white p-6 rounded-xl shadow-md">
                   <Heart className="h-8 w-8 text-red-600 mx-auto mb-2" />
-                  <div className="font-bold text-2xl text-gray-900">20+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="font-bold text-2xl text-gray-900">30+</div>
+                  <div className="text-sm text-gray-600">年经验</div>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md">
                   <Users className="h-8 w-8 text-red-600 mx-auto mb-2" />
-                  <div className="font-bold text-2xl text-gray-900">50K+</div>
-                  <div className="text-sm text-gray-600">Happy Customers</div>
+                  <div className="font-bold text-2xl text-gray-900">100K+</div>
+                  <div className="text-sm text-gray-600">满意顾客</div>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md">
-                  <ChefHat className="h-8 w-8 text-red-600 mx-auto mb-2" />
+                  <UtensilsCrossed className="h-8 w-8 text-red-600 mx-auto mb-2" />
                   <div className="font-bold text-2xl text-gray-900">100%</div>
-                  <div className="text-sm text-gray-600">Authentic</div>
+                  <div className="text-sm text-gray-600">正宗风味</div>
                 </div>
               </div>
             </div>
             <div className="relative">
               <img
                 src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Chef preparing ramen"
+                alt="师傅拉面"
                 className="rounded-2xl shadow-2xl w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-red-600 text-white p-6 rounded-xl shadow-xl">
-                <div className="font-bold text-2xl">18hrs</div>
-                <div className="text-sm">Broth Preparation</div>
+                <div className="font-bold text-2xl">百年</div>
+                <div className="text-sm">传统工艺</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* 🔹 Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What Our Customers Say
+              顾客评价
             </h2>
             <p className="text-xl text-gray-600">
-              Don't just take our word for it
+              听听大家怎么说
             </p>
           </div>
 
@@ -262,9 +261,7 @@ function App() {
               <div
                 key={testimonial.name}
                 className="bg-stone-50 p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
-                style={{
-                  animationDelay: `${index * 200}ms`
-                }}
+                style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -281,92 +278,71 @@ function App() {
         </div>
       </section>
 
-      {/* Location & Contact Section */}
+      {/* 🔹 Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Visit Us Today
+              欢迎光临
             </h2>
             <p className="text-xl text-gray-300">
-              Experience authentic ramen in our cozy restaurant
+              在这里体验最正宗的兰州拉面
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Location */}
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start mb-4">
                 <MapPin className="h-8 w-8 text-red-500 mr-3" />
-                <h3 className="text-2xl font-bold">Location</h3>
+                <h3 className="text-2xl font-bold">地址</h3>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 123 Noodle Street<br />
-                Downtown District<br />
-                Tokyo Square, TC 12345
+                Chinatown, Kuala Lumpur<br />
+                Malaysia
               </p>
             </div>
 
-            {/* Contact */}
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start mb-4">
                 <Phone className="h-8 w-8 text-red-500 mr-3" />
-                <h3 className="text-2xl font-bold">Contact</h3>
+                <h3 className="text-2xl font-bold">电话</h3>
               </div>
-              <p className="text-gray-300 mb-2">(555) 123-RAMEN</p>
-              <p className="text-gray-300 mb-6">hello@ramenhouse.com</p>
+              <p className="text-gray-300 mb-2">+60 12-345 6789</p>
+              <p className="text-gray-300 mb-6">hello@lanzhouramen.com</p>
             </div>
 
-            {/* Hours */}
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start mb-4">
                 <Clock className="h-8 w-8 text-red-500 mr-3" />
-                <h3 className="text-2xl font-bold">Hours</h3>
+                <h3 className="text-2xl font-bold">营业时间</h3>
               </div>
               <div className="text-gray-300 space-y-1">
-                <p>Monday - Thursday: 11am - 10pm</p>
-                <p>Friday - Saturday: 11am - 11pm</p>
-                <p>Sunday: 12pm - 9pm</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl p-12 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold mb-4">Ready to Experience Amazing Ramen?</h3>
-              <p className="text-xl mb-8 text-red-100">
-                Join thousands of satisfied customers who've discovered their new favorite bowl
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-red-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Order for Delivery
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-red-600 transition-all duration-300">
-                  Make a Reservation
-                </button>
+                <p>周一 - 周四: 11am - 10pm</p>
+                <p>周五 - 周六: 11am - 11pm</p>
+                <p>周日: 12pm - 9pm</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* 🔹 Footer */}
       <footer className="bg-gray-800 text-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <ChefHat className="h-8 w-8 text-red-500 mr-3" />
-                <span className="font-bold text-xl text-white">Ramen House</span>
+                <UtensilsCrossed className="h-8 w-8 text-red-500 mr-3" />
+                <span className="font-bold text-xl text-white">兰州拉面馆</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Bringing the authentic taste of Japan to your neighborhood with passion and tradition.
+                每一碗面，都是兰州的味道。
               </p>
             </div>
             
             <div>
-              <h4 className="font-bold text-lg mb-4 text-white">Quick Links</h4>
+              <h4 className="font-bold text-lg mb-4 text-white">快速导航</h4>
               <ul className="space-y-2">
                 <li><a href="#home" className="hover:text-red-500 transition-colors">Home</a></li>
                 <li><a href="#menu" className="hover:text-red-500 transition-colors">Menu</a></li>
@@ -376,9 +352,9 @@ function App() {
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-4 text-white">Follow Us</h4>
+              <h4 className="font-bold text-lg mb-4 text-white">关注我们</h4>
               <div className="flex space-x-4">
-                {['Facebook', 'Instagram', 'Twitter'].map((social) => (
+                {['Facebook', 'Instagram', 'WeChat'].map((social) => (
                   <a
                     key={social}
                     href="#"
@@ -392,7 +368,7 @@ function App() {
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Ramen House. All rights reserved. Made with ❤️ for ramen lovers.</p>
+            <p>&copy; 2025 兰州拉面馆. All rights reserved. Made with ❤️ for noodle lovers.</p>
           </div>
         </div>
       </footer>
