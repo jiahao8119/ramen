@@ -368,7 +368,12 @@ function App() {
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 兰州拉面馆. All rights reserved. Made with ❤️ for noodle lovers.</p>
+            <p>
+  &copy; 2025 兰州拉面馆. All rights reserved. Developed by
+  <a href="https://blinkcodedev.com" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-600 underline ml-1">
+    blinkcodedev
+  </a>
+</p>
           </div>
         </div>
       </footer>
